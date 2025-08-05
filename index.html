@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,27 +36,32 @@
     .slider {
       position: relative;
       width: 100%;
-      max-width: 100vw;
       overflow: hidden;
+      /* Maintain 16:9 aspect ratio on all devices */
+      padding-top: 56.25%;
     }
 
     .slides {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 200%;
+      height: 100%;
     }
 
     .slide {
       flex: 0 0 100%;
       position: relative;
+      height: 100%;
     }
 
     .slide img {
       width: 100%;
-      height: auto;
-      display: block;
-      max-height: 80vh;
+      height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .headline {
@@ -68,7 +72,7 @@
       background: rgba(0,0,0,0.65);
       color: #fff;
       padding: 12px;
-      font-size: 1.1em;
+      font-size: 1.2em;
       font-weight: bold;
       border-radius: 4px;
       text-decoration: none;
@@ -76,7 +80,7 @@
 
     .nav-dots {
       text-align: center;
-      margin-top: 10px;
+      margin: 10px 0;
     }
 
     .nav-dots button {
@@ -87,6 +91,10 @@
       margin: 4px;
       border-radius: 50%;
       cursor: pointer;
+    }
+
+    .nav-dots button:hover {
+      background: #666;
     }
 
     .articles {
@@ -122,12 +130,28 @@
       display: block;
       font-size: 1.05em;
     }
+
+    @media (min-width: 600px) {
+      .article-card {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .article-card img {
+        width: 200px;
+        height: 130px;
+      }
+
+      .article-card a {
+        padding: 14px 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">BBC NEWS</div>
+    <div class="logo">Ryan News</div>
     <nav>
       <a href="index.html">Home</a>
     </nav>
@@ -144,10 +168,11 @@
         <a class="headline" href="secret-bear-meetings.html">Bears are seen having secret meetings in their bear caves</a>
       </div>
     </div>
-    <div class="nav-dots">
-      <button onclick="moveSlide(0)"></button>
-      <button onclick="moveSlide(1)"></button>
-    </div>
+  </div>
+
+  <div class="nav-dots">
+    <button onclick="moveSlide(0)"></button>
+    <button onclick="moveSlide(1)"></button>
   </div>
 
   <div class="articles">
