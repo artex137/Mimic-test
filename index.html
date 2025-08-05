@@ -6,9 +6,9 @@
   <title>Ryan News | Home</title>
   <style>
     body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: Arial, sans-serif;
+      background: #191919;
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', Times, serif;
       margin: 0;
       padding: 0;
     }
@@ -16,42 +16,53 @@
       text-decoration: none;
       color: inherit;
     }
-    .topbar {
-      background: #333;
-      color: white;
-      padding: 10px;
+    .top-bar {
+      background: #272727;
+      padding: 8px 0;
       text-align: center;
-      font-size: 1em;
+      font-size: 1.1em;
+      letter-spacing: 1px;
     }
     .header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      background-color: #000;
-      padding: 12px 16px;
+      background: #222;
+      padding: 16px 20px;
+      border-bottom: 1px solid #383838;
+      flex-wrap: wrap;
     }
     .logo {
-      font-size: 1.6em;
-      color: white;
-      font-weight: bold;
+      font-family: 'Old English Text MT', Georgia, serif;
+      font-size: 2em;
+      color: #dadada;
+      flex: 1;
     }
-    .header nav a {
-      color: white;
-      margin-left: 20px;
+    .nav {
+      display: flex;
+      gap: 18px;
+      margin-left: 12px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      color: #bcbcbc;
       text-decoration: none;
       font-size: 1em;
+      padding: 5px 0;
+      transition: color 0.2s;
     }
-
+    .nav a:hover {
+      color: #fff;
+    }
     .slider-container {
-      position: relative;
-      max-width: 100%;
-      margin: 0 auto;
+      max-width: 768px;
+      margin: 20px auto;
       overflow: hidden;
+      position: relative;
     }
     .slides {
       display: flex;
-      transition: transform 0.5s ease-in-out;
       width: 200%;
+      transition: transform 0.5s ease;
     }
     .slide {
       width: 100%;
@@ -62,98 +73,81 @@
       width: 100%;
       height: auto;
       display: block;
+      object-fit: cover;
     }
     .slide-title {
       position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 8px 12px;
-      font-size: 1em;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 14px;
+      font-size: 1.1em;
       color: #fff;
       border-radius: 4px;
-      max-width: 90%;
+      max-width: 85%;
     }
     .nav-buttons {
       text-align: center;
-      margin: 10px 0;
+      margin-top: 10px;
     }
     .nav-buttons button {
-      background-color: #333;
+      background-color: #444;
       border: none;
-      color: #fff;
+      color: white;
       padding: 6px 10px;
-      margin: 0 5px;
+      margin: 0 4px;
       cursor: pointer;
       border-radius: 4px;
     }
     .nav-buttons button:hover {
-      background-color: #555;
+      background-color: #666;
     }
-
     .featured {
       max-width: 768px;
-      margin: 30px auto;
-      padding: 0 16px;
+      margin: 40px auto;
+      padding: 0 18px;
     }
     .featured h2 {
       color: #ffffff;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
     .card {
       display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      background: #1f1f1f;
-      border-radius: 6px;
+      background: #1c1c1c;
+      border-radius: 5px;
       overflow: hidden;
+      margin-bottom: 18px;
       flex-wrap: wrap;
     }
     .card img {
       width: 100%;
-      max-width: 160px;
-      height: auto;
+      max-width: 180px;
       object-fit: cover;
-      flex-shrink: 0;
+      height: auto;
     }
     .card-info {
+      padding: 14px 16px;
       flex: 1;
-      padding: 12px 16px;
     }
     .card-title {
       font-size: 1.1em;
       color: #fff;
     }
-
-    @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .header nav a {
-        margin: 10px 10px 0 0;
-        display: inline-block;
-      }
-      .card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .card img {
-        width: 100%;
-        max-width: none;
-      }
-      .slide-title {
-        font-size: 0.95em;
-      }
+    @media (max-width: 768px) {
+      .headline { font-size: 2em; }
+      .slider-container, .featured { max-width: 100%; }
+      .card { flex-direction: column; }
+      .card img { max-width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="topbar">https://artex137.github.io/Ryan-News/</div>
-
+  <div class="top-bar">
+    www.ryannews.net
+  </div>
   <div class="header">
     <div class="logo">Ryan News</div>
-    <nav>
+    <nav class="nav">
       <a href="index.html">Home</a>
     </nav>
   </div>
@@ -162,7 +156,7 @@
     <div class="slides" id="slider">
       <div class="slide">
         <a href="man-goes-crazy.html">
-          <img src="20250805_013801.png" alt="Man goes crazy"/>
+          <img src="20250805_013801.png" alt="Man Goes Crazy"/>
           <div class="slide-title">Man goes crazy after discovering secrets of the universe</div>
         </a>
       </div>
@@ -183,7 +177,7 @@
     <h2>Featured Articles</h2>
     <a href="man-goes-crazy.html">
       <div class="card">
-        <img src="20250805_013801.png" alt="Man">
+        <img src="20250805_013801.png" alt="Man Article">
         <div class="card-info">
           <div class="card-title">Man goes crazy after discovering secrets of the universe</div>
         </div>
@@ -191,7 +185,7 @@
     </a>
     <a href="secret-bear-meetings.html">
       <div class="card">
-        <img src="2017.11.28 - Grizzly Bear Carrying Fish - Ursula Dubrick-fStop Foundation (1).jpg" alt="Bear">
+        <img src="2017.11.28 - Grizzly Bear Carrying Fish - Ursula Dubrick-fStop Foundation (1).jpg" alt="Bear Article">
         <div class="card-info">
           <div class="card-title">Bears are seen having secret meetings in their bear caves</div>
         </div>
