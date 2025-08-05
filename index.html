@@ -1,153 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ryan News | Home</title>
   <style>
-    /* ---------- Base Theme (matches article pages) ---------- */
-    body{
-      margin:0;
-      font-family:Georgia,'Times New Roman',Times,serif;
-      background:#191919;
-      color:#fff;
+    body {
+      background: #191919;
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
     }
-    a{text-decoration:none;color:inherit;}
-
-    .top-bar{
-      background:#272727;
-      text-align:center;
-      padding:8px 0;
-      font-size:1.1em;
-      letter-spacing:.5px;
+    .top-bar {
+      background: #272727;
+      padding: 8px 0;
+      text-align: center;
+      font-size: 1.1em;
+      letter-spacing: 1px;
     }
-
-    .header{
-      display:flex;align-items:center;flex-wrap:wrap;
-      background:#222;padding:16px 20px;border-bottom:1px solid #383838;
+    .header {
+      display: flex;
+      align-items: center;
+      background: #222;
+      padding: 16px 20px;
+      border-bottom: 1px solid #383838;
+      flex-wrap: wrap;
     }
-    .logo{
-      font-family:'Old English Text MT',Georgia,serif;
-      font-size:2em;color:#dadada;flex:1;
+    .logo {
+      font-family: 'Old English Text MT', Georgia, serif;
+      font-size: 2em;
+      color: #dadada;
+      flex: 1;
     }
-    nav a{
-      color:#bcbcbc;font-size:1em;margin-left:18px;
+    .nav {
+      display: flex;
+      gap: 18px;
     }
-    nav a:hover{color:#fff}
-
-    /* ---------- Slider ---------- */
-    .slider-wrap{max-width:100%;overflow:hidden}
-    .slider{
-      display:flex;transition:transform .5s ease;width:200%;
+    .nav a {
+      color: #bcbcbc;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.2s;
     }
-    .slide{
-      width:100%;position:relative;flex-shrink:0;
+    .nav a:hover {
+      color: #fff;
     }
-    .slide img{
-      width:100%;height:auto;max-height:70vh;object-fit:cover;display:block;
+    .slider-container {
+      width: 100%;
+      max-width: 768px;
+      margin: 20px auto;
+      overflow: hidden;
+      position: relative;
     }
-    /* headline link overlay */
-    .slide a.headline{
-      position:absolute;left:12px;bottom:12px;
-      background:rgba(0,0,0,.65);
-      padding:10px 14px;border-radius:4px;
-      font-size:1.1em;line-height:1.2;
-      max-width:85%;
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 200%;
     }
-
-    /* nav dots / buttons */
-    .dots{text-align:center;margin:10px 0}
-    .dots button{
-      width:10px;height:10px;border-radius:50%;
-      border:none;margin:0 4px;cursor:pointer;background:#555;
+    .slide {
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
     }
-    .dots button.active{background:#fff}
-
-    /* ---------- Featured cards ---------- */
-    .featured{max-width:768px;margin:40px auto;padding:0 18px}
-    .featured h2{margin-bottom:18px}
-    .card{
-      display:flex;background:#1c1c1c;border-radius:6px;overflow:hidden;margin-bottom:18px;flex-wrap:wrap;
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
-    .card img{width:100%;max-width:180px;object-fit:cover}
-    .card-info{flex:1;padding:14px 16px}
-    .card-title{font-size:1.1em}
-
-    /* ---------- Mobile tweaks ---------- */
-    @media(max-width:768px){
-      .slide img{max-height:40vh}
-      .card{flex-direction:column}
-      .card img{max-width:none}
+    .headline-overlay {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 14px;
+      font-size: 1.2em;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .nav-buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .nav-buttons button {
+      background: #444;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      margin: 0 4px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .nav-buttons button:hover {
+      background: #666;
+    }
+    @media (max-width: 600px) {
+      .headline-overlay {
+        font-size: 1em;
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="top-bar">https://artex137.github.io/Ryan-News/</div>
-
-  <header class="header">
+  <div class="top-bar">www.ryannews.net</div>
+  <div class="header">
     <div class="logo">Ryan News</div>
-    <nav><a href="index.html">Home</a></nav>
-  </header>
-
-  <!-- Slider -->
-  <section class="slider-wrap">
-    <div class="slider" id="slider">
-      <!-- Slide 1 -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+  <div class="slider-container">
+    <div class="slides" id="slider">
       <div class="slide">
-        <img src="20250805_013801.png" alt="Man goes crazy">
-        <a class="headline" href="man-goes-crazy.html">
+        <img src="20250805_013801.png" alt="Man Goes Crazy"/>
+        <a class="headline-overlay" href="man-goes-crazy.html">
           Man goes crazy after discovering secrets of the universe
         </a>
       </div>
-      <!-- Slide 2 -->
       <div class="slide">
-        <img src="2017.11.28 - Grizzly Bear Carrying Fish - Ursula Dubrick-fStop Foundation (1).jpg" alt="Bear meetings">
-        <a class="headline" href="secret-bear-meetings.html">
+        <img src="2017.11.28 - Grizzly Bear Carrying Fish - Ursula Dubrick-fStop Foundation (1).jpg" alt="Bear Meetings"/>
+        <a class="headline-overlay" href="secret-bear-meetings.html">
           Bears are seen having secret meetings in their bear caves
         </a>
       </div>
     </div>
-
-    <!-- Dots -->
-    <div class="dots">
-      <button onclick="go(0)" id="dot0"></button>
-      <button onclick="go(1)" id="dot1"></button>
+    <div class="nav-buttons">
+      <button onclick="moveSlide(0)">1</button>
+      <button onclick="moveSlide(1)">2</button>
     </div>
-  </section>
-
-  <!-- Featured section -->
-  <section class="featured">
-    <h2>Featured Articles</h2>
-
-    <a href="man-goes-crazy.html">
-      <article class="card">
-        <img src="20250805_013801.png" alt="Man article">
-        <div class="card-info">
-          <div class="card-title">Man goes crazy after discovering secrets of the universe</div>
-        </div>
-      </article>
-    </a>
-
-    <a href="secret-bear-meetings.html">
-      <article class="card">
-        <img src="2017.11.28 - Grizzly Bear Carrying Fish - Ursula Dubrick-fStop Foundation (1).jpg" alt="Bear article">
-        <div class="card-info">
-          <div class="card-title">Bears are seen having secret meetings in their bear caves</div>
-        </div>
-      </article>
-    </a>
-  </section>
-
-  <!-- Simple slider JS -->
+  </div>
   <script>
-    const slider=document.getElementById('slider');
-    const dots=[document.getElementById('dot0'),document.getElementById('dot1')];
-    function go(i){
-      slider.style.transform='translateX('+(-100*i)+'%)';
-      dots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
+    const slider = document.getElementById('slider');
+    function moveSlide(index) {
+      slider.style.transform = 'translateX(' + (-100 * index) + '%)';
     }
-    // default dot
-    go(0);
   </script>
 </body>
 </html>
