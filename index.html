@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ryan News | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #121212;
       color: #e0e0e0;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
     }
@@ -22,6 +23,7 @@
       padding: 12px 20px;
       font-size: 1.2em;
       font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
     .header {
       display: flex;
@@ -42,9 +44,14 @@
     .article-card {
       margin-bottom: 32px;
       background-color: #1f1f1f;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .article-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
     }
     .article-card img {
       width: 100%;
@@ -53,22 +60,22 @@
       object-fit: cover;
     }
     .article-info {
-      padding: 16px;
+      padding: 18px;
     }
     .article-title {
-      font-size: 1.4em;
-      font-weight: bold;
+      font-size: 1.5em;
+      font-weight: 700;
       color: #ffffff;
       margin-bottom: 10px;
     }
     .article-summary {
       font-size: 1em;
       color: #cccccc;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     .article-link {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 12px;
       color: #61dafb;
       font-weight: bold;
     }
