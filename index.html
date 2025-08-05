@@ -3,91 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ryan News | Home</title>
+  <title>CTV News Clone | Home</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #121212;
-      color: #ffffff;
+      font-family: Arial, sans-serif;
+      color: #e0e0e0;
     }
-
-    header {
-      background-color: #1d1d1d;
-      padding: 10px 15px;
+    .navbar {
+      background-color: #1f1f1f;
+      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .logo {
-      font-size: 24px;
+    .navbar .logo {
+      font-size: 1.5rem;
+      color: white;
       font-weight: bold;
-      color: #ffffff;
     }
-
-    .nav a {
-      color: #ffffff;
-      margin-left: 20px;
+    .navbar a {
+      color: white;
       text-decoration: none;
+      font-size: 1rem;
     }
-
-    .container {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+    .main {
+      max-width: 768px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
-    .card {
+    .article-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .article-item {
       background-color: #1f1f1f;
       border-radius: 6px;
-      margin-bottom: 20px;
       overflow: hidden;
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
-    .card img {
+    .article-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .article-item img {
       width: 100%;
+      display: block;
+      object-fit: cover;
       height: auto;
-      display: block;
     }
-
-    .card h3 {
-      margin: 10px;
+    .info {
+      padding: 1rem;
     }
-
-    .card a {
-      color: #5ca4ea;
-      text-decoration: none;
-      display: block;
-      margin: 10px;
+    .info h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.3rem;
+      color: #fff;
     }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
+    .info p {
+      margin: 0;
+      color: #ccc;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="navbar">
     <div class="logo">CTV NEWS</div>
-    <div class="nav">
-      <a href="#">Home</a>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="card">
-      <img src="F1.jpg" alt="Witch rooftop sighting">
-      <h3>Strange women have been seen at light on rooftops carrying broomsticks</h3>
-      <a href="rooftop-witches.html">Read full article</a>
-    </div>
+    <a href="index.html">Home</a>
   </div>
 
-  <footer>
-    © 2025 Ryan News | Fictional content for entertainment and parody only.
-  </footer>
+  <div class="main">
+    <ul class="article-list">
+      <li class="article-item">
+        <a href="rooftop-witches.html">
+          <img src="F1.jpg" alt="Rooftop witches"/>
+          <div class="info">
+            <h2>Strange women have been seen at light on roof tops carrying broomsticks</h2>
+            <p>By Malcolm Drysdale | Toronto News</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
 </body>
 </html>
